@@ -1,0 +1,6 @@
+framework module Pods_NetflixOTT_NetflixOTTUITests {
+  umbrella header "Pods-NetflixOTT-NetflixOTTUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
