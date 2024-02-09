@@ -29,7 +29,8 @@
 		48D94AD72B721C5500315F46 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D94AD62B721C5500315F46 /* UpcomingViewController.swift */; };
 		48D94AD92B721D0F00315F46 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D94AD82B721D0F00315F46 /* SearchViewController.swift */; };
 		48D94ADB2B721D2400315F46 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D94ADA2B721D2400315F46 /* DownloadViewController.swift */; };
-		48E80EFE2B73CAF200F16019 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E80EFD2B73CAF200F16019 /* Extensions.swift */; };
+		48E80EFE2B73CAF200F16019 /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E80EFD2B73CAF200F16019 /* String+Additions.swift */; };
+		48E80F072B76134900F16019 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E80F062B76134900F16019 /* HomeViewControllerTests.swift */; };
 		9F641BAD1AAB7401BFC1AA1A /* Pods_NetflixOTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9582F1D42EFDBD9338A67F /* Pods_NetflixOTT.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +77,8 @@
 		48D94AD62B721C5500315F46 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		48D94AD82B721D0F00315F46 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		48D94ADA2B721D2400315F46 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
-		48E80EFD2B73CAF200F16019 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		48E80EFD2B73CAF200F16019 /* String+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		48E80F062B76134900F16019 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		5A9582F1D42EFDBD9338A67F /* Pods_NetflixOTT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetflixOTT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9598D64357E72FAA39640096 /* Pods-NetflixOTT-NetflixOTTUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetflixOTT-NetflixOTTUITests.release.xcconfig"; path = "Target Support Files/Pods-NetflixOTT-NetflixOTTUITests/Pods-NetflixOTT-NetflixOTTUITests.release.xcconfig"; sourceTree = "<group>"; };
 		989934C9B37A3D297B66D31A /* Pods-NetflixOTT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetflixOTT.debug.xcconfig"; path = "Target Support Files/Pods-NetflixOTT/Pods-NetflixOTT.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,7 +160,7 @@
 		487135EC2B7225800045599C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				48E80EFD2B73CAF200F16019 /* Extensions.swift */,
+				48E80EFD2B73CAF200F16019 /* String+Additions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				48D94ABC2B720E7E00315F46 /* NetflixOTTTests.swift */,
+				48E80F062B76134900F16019 /* HomeViewControllerTests.swift */,
 			);
 			path = NetflixOTTTests;
 			sourceTree = "<group>";
@@ -512,7 +515,7 @@
 				48D94AD72B721C5500315F46 /* UpcomingViewController.swift in Sources */,
 				48D94AA52B720E7B00315F46 /* SceneDelegate.swift in Sources */,
 				486DB1C92B738006005567E3 /* TitleViewModel.swift in Sources */,
-				48E80EFE2B73CAF200F16019 /* Extensions.swift in Sources */,
+				48E80EFE2B73CAF200F16019 /* String+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48D94ABD2B720E7E00315F46 /* NetflixOTTTests.swift in Sources */,
+				48E80F072B76134900F16019 /* HomeViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

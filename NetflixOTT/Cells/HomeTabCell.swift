@@ -31,6 +31,26 @@ class HomeTabCell: UITableViewCell {
                 flowLayout.minimumInteritemSpacing = 5.0
                 self.collectionViewObj.collectionViewLayout = flowLayout
                 self.collectionViewObj.showsHorizontalScrollIndicator = false
+        startTimer()
+    }
+    
+    //for collectionview auto scrollview
+    func startTimer() {
+
+        let timer =  Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
+    }
+
+    var x = 1
+    @objc func scrollAutomatically(_ timer1: Timer) {
+        
+        if self.x < self.titles.count {
+              let indexPath = IndexPath(item: x, section: 0)
+              self.collectionViewObj.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+              self.x = self.x + 1
+            }else{
+              self.x = 0
+              self.collectionViewObj.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
+            }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,7 +85,7 @@ extension HomeTabCell: UICollectionViewDelegate, UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        guard let model = titles[indexPath.row].poster_path else {
+        guard let model = titles[indexPath.row % titles.count].poster_path else {
             return UICollectionViewCell()
         }
         cell.configure(with: model)
