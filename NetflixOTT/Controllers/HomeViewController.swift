@@ -31,6 +31,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configureNavbar()
+        self.setTableView()
+    }
+
+    func setTableView () {
         tableViewObj.backgroundColor = .black
         let nib = UINib(nibName: "HomeTabCell", bundle: nil)
         tableViewObj.register(nib, forCellReuseIdentifier: "HomeTabCell")
@@ -41,7 +45,7 @@ class HomeViewController: UIViewController {
         tableViewObj.tableHeaderView = headerView
         configureHeaderView()
     }
-
+    
     //configuring headerview
     private func configureHeaderView() {
         APICalls.shared.getTrendingMovies { [weak self] result in
@@ -90,8 +94,6 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
             return UITableViewCell()
         }
         
-//        cell.delegate = self
-
         switch indexPath.section {
         case Sections.TrendingMovies.rawValue:
             APICalls.shared.getTrendingMovies { result in

@@ -8,11 +8,11 @@
 import Foundation
 
 
-struct TrendingTitleResponse: Codable {
+struct TrendingTitleResponse: Decodable {
     let results: [Title]
 }
 
-struct Title: Codable {
+struct Title: Decodable {
     let id: Int
     let media_type: String?
     let original_name: String?
