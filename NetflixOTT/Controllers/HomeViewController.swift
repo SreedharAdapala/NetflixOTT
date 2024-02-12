@@ -93,7 +93,8 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTabCell.identifier, for: indexPath) as? HomeTabCell else {
             return UITableViewCell()
         }
-        
+        cell.delegate = self
+
         switch indexPath.section {
         case Sections.TrendingMovies.rawValue:
             APICalls.shared.getTrendingMovies { result in
@@ -180,4 +181,14 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
     }
 }
 
+
+extension HomeViewController: HometabTableViewCellDelegate {
+    func collectionViewTableViewCellDidTapCell(_ cell: HomeTabCell, viewModel: TitlePreviewViewModel) {
+        DispatchQueue.main.async { [weak self] in
+            let vc = TitlePreviewViewController()
+            vc.configure(with: viewModel)
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+}
 
