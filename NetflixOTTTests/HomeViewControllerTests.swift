@@ -11,12 +11,15 @@ import XCTest
 final class HomeViewControllerTests: XCTestCase {
 
     var homeViewController: HomeViewController!
-    
+    var tableCell:HomeTabCell!
+
     override func setUpWithError() throws {
         let story = UIStoryboard.init(name: "Main", bundle: nil)
         
         homeViewController = story.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         homeViewController.loadViewIfNeeded()
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableCell = homeViewController?.tableViewObj.cellForRow(at: indexPath) as?HomeTabCell
     }
 
     override func tearDownWithError() throws {
@@ -40,18 +43,14 @@ final class HomeViewControllerTests: XCTestCase {
     
     func testCellForRownReturnsExpectedCell () {
         // get the cell for the first row
-        let indexPath = IndexPath(row: 0, section: 0)
-        
-        let cell = homeViewController.tableView(homeViewController.tableViewObj, cellForRowAt: indexPath) as? UITableViewCell
-
-        XCTAssertNotNil(cell)
-        XCTAssertTrue(cell != nil)
+        XCTAssertNotNil(tableCell)
+        XCTAssertTrue(tableCell != nil)
     }
     
 //    func testCollectionviewInTableViewCellHasDataSource () {
 //        let indexPath = IndexPath(row: 0, section: 0)
-//        let cell = homeViewController?.tableViewObj.cellForRow(at: indexPath) as?HomeTabCell
-//        let collectionViewCell = cell?.collectionViewObj.cellForItem(at: indexPath)
+////        let tableCell = homeViewController?.tableViewObj.cellForRow(at: indexPath) as?HomeTabCell
+//        let collectionViewCell = tableCell.collectionViewObj.cellForItem(at: indexPath)
 //        XCTAssertNotNil(collectionViewCell)
 //        XCTAssertNotEqual(collectionViewCell?.backgroundColor, .blue)
 //    }
@@ -68,6 +67,30 @@ final class HomeViewControllerTests: XCTestCase {
     func testViewDidLoad() {
         XCTAssertNotNil(homeViewController)
     }
-
+    func testSetTableView() {
+        homeViewController.setTableView()
+        XCTAssertNotNil(homeViewController.tableViewObj.tableHeaderView)
+    }
+    
+    func testConfigureHeaderView() {
+        let expectation = self.expectation(description: "API call completed")
+        
+        APICalls.shared.getTrendingMovies { result in
+            switch result {
+            case .success(let titles):
+                print("")
+                XCTAssertNotNil(titles)
+            case .failure(let erorr):
+                XCTFail("Error: \(erorr.localizedDescription)")
+            }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
+        homeViewController.publicMethodToTestConfigureHeaderView()
+        XCTAssertNotNil(homeViewController.randomTrendingMovie)
+    }
 
 }
+
+
+

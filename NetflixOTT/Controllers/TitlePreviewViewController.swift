@@ -44,6 +44,7 @@ class TitlePreviewViewController: UIViewController {
     }()
     
     private let webView: WKWebView = {
+//        let webView = WKWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-100))
         let webView = WKWebView()
         webView.translatesAutoresizingMaskIntoConstraints = false
         return webView
@@ -61,8 +62,6 @@ class TitlePreviewViewController: UIViewController {
         
         
     }
-    
-
     
     func configureConstraints() {
         let webViewConstraints = [

@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
 
     
     @IBOutlet weak var tableViewObj: UITableView!
-    private var randomTrendingMovie: Title?
+    var randomTrendingMovie: Title?
     private var headerView: HeaderView?
 
     let sectionTitles: [String] = ["Trending Movies", "Trending Tv", "Popular", "Upcoming Movies", "Top rated"]
@@ -192,3 +192,8 @@ extension HomeViewController: HometabTableViewCellDelegate {
     }
 }
 
+extension HomeViewController {
+    public func publicMethodToTestConfigureHeaderView() {
+        self.configureHeaderView()
+    }
+}
