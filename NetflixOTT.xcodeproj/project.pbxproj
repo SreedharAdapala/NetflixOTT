@@ -14,6 +14,8 @@
 		4829E0342B7A07600052AF3C /* TitlePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829E0332B7A07600052AF3C /* TitlePreviewViewController.swift */; };
 		4829E0372B7B4DD70052AF3C /* UpcomingTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829E0352B7B4DD70052AF3C /* UpcomingTitleTableViewCell.swift */; };
 		4829E0382B7B4DD70052AF3C /* UpcomingTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4829E0362B7B4DD70052AF3C /* UpcomingTitleTableViewCell.xib */; };
+		4829E03A2B7DD1F40052AF3C /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829E0392B7DD1F40052AF3C /* GlobalConstants.swift */; };
+		4829E03C2B7DDB640052AF3C /* HomeTabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829E03B2B7DDB640052AF3C /* HomeTabPageViewController.swift */; };
 		486DB1C92B738006005567E3 /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DB1C82B738006005567E3 /* TitleViewModel.swift */; };
 		487135E82B7222700045599C /* HomeTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487135E62B7222700045599C /* HomeTabCell.swift */; };
 		487135E92B7222700045599C /* HomeTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487135E72B7222700045599C /* HomeTabCell.xib */; };
@@ -63,6 +65,8 @@
 		4829E0332B7A07600052AF3C /* TitlePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewController.swift; sourceTree = "<group>"; };
 		4829E0352B7B4DD70052AF3C /* UpcomingTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTitleTableViewCell.swift; sourceTree = "<group>"; };
 		4829E0362B7B4DD70052AF3C /* UpcomingTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingTitleTableViewCell.xib; sourceTree = "<group>"; };
+		4829E0392B7DD1F40052AF3C /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		4829E03B2B7DDB640052AF3C /* HomeTabPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabPageViewController.swift; sourceTree = "<group>"; };
 		486DB1C82B738006005567E3 /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
 		487135E62B7222700045599C /* HomeTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabCell.swift; sourceTree = "<group>"; };
 		487135E72B7222700045599C /* HomeTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTabCell.xib; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				48D53E422B737ABF00FAE075 /* APICalls.swift */,
+				4829E0392B7DD1F40052AF3C /* GlobalConstants.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				48D94AA62B720E7B00315F46 /* HomeViewController.swift */,
+				4829E03B2B7DDB640052AF3C /* HomeTabPageViewController.swift */,
 				48D94AD62B721C5500315F46 /* UpcomingViewController.swift */,
 				48D94AD82B721D0F00315F46 /* SearchViewController.swift */,
 				48D94ADA2B721D2400315F46 /* DownloadViewController.swift */,
@@ -520,10 +526,12 @@
 			files = (
 				487135F22B735FF90045599C /* TitleModel.swift in Sources */,
 				48D94AD92B721D0F00315F46 /* SearchViewController.swift in Sources */,
+				4829E03C2B7DDB640052AF3C /* HomeTabPageViewController.swift in Sources */,
 				4829E0342B7A07600052AF3C /* TitlePreviewViewController.swift in Sources */,
 				48D53E432B737ABF00FAE075 /* APICalls.swift in Sources */,
 				4829E0302B7A05C60052AF3C /* TitlePreviewViewModel.swift in Sources */,
 				487135F02B7332210045599C /* HeaderView.swift in Sources */,
+				4829E03A2B7DD1F40052AF3C /* GlobalConstants.swift in Sources */,
 				48D94AAD2B720E7B00315F46 /* NetflixOTT.xcdatamodeld in Sources */,
 				48D94AA72B720E7B00315F46 /* HomeViewController.swift in Sources */,
 				487135F42B73613F0045599C /* TitleCollectionViewCell.swift in Sources */,

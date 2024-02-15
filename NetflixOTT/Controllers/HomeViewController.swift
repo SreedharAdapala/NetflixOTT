@@ -65,6 +65,11 @@ class HomeViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableViewObj.frame = view.bounds
+        for subView in view.subviews {
+            if  subView is  UIPageControl {
+                subView.frame.origin.y = self.view.frame.size.height - 164
+            }
+        }
     }
 
     private func configureNavbar() {

@@ -11,12 +11,12 @@ import XCTest
 final class HomeViewControllerTests: XCTestCase {
 
     var homeViewController: HomeViewController!
-    var tableCell:HomeTabCell!
+    var tableCell:HomeTabCell! //cell reference
 
     override func setUpWithError() throws {
         let story = UIStoryboard.init(name: "Main", bundle: nil)
         
-        homeViewController = story.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        homeViewController = story.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
         homeViewController.loadViewIfNeeded()
         let indexPath = IndexPath(row: 0, section: 0)
         tableCell = homeViewController?.tableViewObj.cellForRow(at: indexPath) as?HomeTabCell

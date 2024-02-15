@@ -11,6 +11,7 @@ class UpcomingTitleTableViewCell: UITableViewCell {
 
     static let identifier = "UpcomingTitleTableViewCell"
 
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,14 +26,14 @@ class UpcomingTitleTableViewCell: UITableViewCell {
     
     
     
-    private let playTitleButton: UIButton = {
-        let button = UIButton()
-        let image = UIImage(systemName: "play.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
-        button.setImage(image, for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.tintColor = .white
-        return button
-    }()
+//    private let playTitleButton: UIButton = {
+//        let button = UIButton()
+//        let image = UIImage(systemName: "play.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
+//        button.setImage(image, for: .normal)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.tintColor = .blue
+//        return button
+//    }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -52,7 +53,7 @@ class UpcomingTitleTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(titlesPosterUIImageView)
         contentView.addSubview(titleLabel)
-        contentView.addSubview(playTitleButton)
+//        contentView.addSubview(playTitleButton)
         
         applyConstraints()
         
@@ -74,14 +75,14 @@ class UpcomingTitleTableViewCell: UITableViewCell {
         ]
         
         
-        let playTitleButtonConstraints = [
-            playTitleButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            playTitleButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
-        ]
+//        let playTitleButtonConstraints = [
+//            playTitleButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+//            playTitleButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+//        ]
         
         NSLayoutConstraint.activate(titlesPosterUIImageViewConstraints)
         NSLayoutConstraint.activate(titleLabelConstraints)
-        NSLayoutConstraint.activate(playTitleButtonConstraints)
+//        NSLayoutConstraint.activate(playTitleButtonConstraints)
     }
     
     

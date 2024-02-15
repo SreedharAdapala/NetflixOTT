@@ -44,7 +44,7 @@ class HomeTabCell: UITableViewCell {
     //for collectionview auto scrollview
     func startTimer() {
 
-        _ =  Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
+        _ =  Timer.scheduledTimer(timeInterval: timeIntervalForHometabCollectionview, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
     }
 
     var x = 1
