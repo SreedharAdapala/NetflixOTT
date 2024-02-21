@@ -22,6 +22,7 @@
 		487135F02B7332210045599C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487135EF2B7332210045599C /* HeaderView.swift */; };
 		487135F22B735FF90045599C /* TitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487135F12B735FF90045599C /* TitleModel.swift */; };
 		487135F42B73613F0045599C /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487135F32B73613F0045599C /* TitleCollectionViewCell.swift */; };
+		48CDE3E12B847B6D0015BD52 /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CDE3E02B847B6D0015BD52 /* PlayVideoViewController.swift */; };
 		48D53E432B737ABF00FAE075 /* APICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D53E422B737ABF00FAE075 /* APICalls.swift */; };
 		48D94AA32B720E7B00315F46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D94AA22B720E7B00315F46 /* AppDelegate.swift */; };
 		48D94AA52B720E7B00315F46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D94AA42B720E7B00315F46 /* SceneDelegate.swift */; };
@@ -73,6 +74,7 @@
 		487135EF2B7332210045599C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		487135F12B735FF90045599C /* TitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModel.swift; sourceTree = "<group>"; };
 		487135F32B73613F0045599C /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		48CDE3E02B847B6D0015BD52 /* PlayVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
 		48D53E422B737ABF00FAE075 /* APICalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICalls.swift; sourceTree = "<group>"; };
 		48D94A9F2B720E7B00315F46 /* NetflixOTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixOTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D94AA22B720E7B00315F46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				48D94AD82B721D0F00315F46 /* SearchViewController.swift */,
 				48D94ADA2B721D2400315F46 /* DownloadViewController.swift */,
 				4829E0332B7A07600052AF3C /* TitlePreviewViewController.swift */,
+				48CDE3E02B847B6D0015BD52 /* PlayVideoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				4829E03C2B7DDB640052AF3C /* HomeTabPageViewController.swift in Sources */,
 				4829E0342B7A07600052AF3C /* TitlePreviewViewController.swift in Sources */,
 				48D53E432B737ABF00FAE075 /* APICalls.swift in Sources */,
+				48CDE3E12B847B6D0015BD52 /* PlayVideoViewController.swift in Sources */,
 				4829E0302B7A05C60052AF3C /* TitlePreviewViewModel.swift in Sources */,
 				487135F02B7332210045599C /* HeaderView.swift in Sources */,
 				4829E03A2B7DD1F40052AF3C /* GlobalConstants.swift in Sources */,

@@ -186,13 +186,18 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
     }
 }
 
-
 extension HomeViewController: HometabTableViewCellDelegate {
     func collectionViewTableViewCellDidTapCell(_ cell: HomeTabCell, viewModel: TitlePreviewViewModel) {
         DispatchQueue.main.async { [weak self] in
-            let vc = TitlePreviewViewController()
-            vc.configure(with: viewModel)
-            self?.navigationController?.pushViewController(vc, animated: true)
+//            let vc = PlayVideoViewController() //TitlePreviewViewController()
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlayVideoViewController") as? PlayVideoViewController
+            
+//            vc.configure(with: viewModel)
+//            vc.playtheVideo(with: viewModel)
+            vc?.model = viewModel
+            if let vcVal = vc {
+                self?.navigationController?.pushViewController(vcVal, animated: true)
+            }
         }
     }
 }

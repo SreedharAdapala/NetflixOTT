@@ -125,6 +125,40 @@
             </objects>
             <point key="canvasLocation" x="3870.9923664122134" y="184.50704225352115"/>
         </scene>
+        <!--Play Video View Controller-->
+        <scene sceneID="8b9-O0-MrP">
+            <objects>
+                <viewController storyboardIdentifier="PlayVideoViewController" id="0bf-BB-OwE" customClass="PlayVideoViewController" customModule="NetflixOTT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SNt-Xn-foq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Vu-o1-aUy">
+                                <rect key="frame" x="0.0" y="59" width="393" height="271"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="271" id="uCd-ll-6os"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TnS-HH-CjN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Vu-o1-aUy" firstAttribute="leading" secondItem="TnS-HH-CjN" secondAttribute="leading" id="0LD-gm-LsF"/>
+                            <constraint firstItem="TnS-HH-CjN" firstAttribute="trailing" secondItem="1Vu-o1-aUy" secondAttribute="trailing" id="3W5-7i-Mun"/>
+                            <constraint firstItem="1Vu-o1-aUy" firstAttribute="top" secondItem="TnS-HH-CjN" secondAttribute="top" id="RPb-5p-MvC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2Xq-83-fnd"/>
+                    <connections>
+                        <outlet property="playerViewHeightConstraint" destination="uCd-ll-6os" id="fGU-V1-uPI"/>
+                        <outlet property="playerViewObj" destination="1Vu-o1-aUy" id="543-Cm-mWm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AlS-bf-RTa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5515.2671755725187" y="184.50704225352115"/>
+        </scene>
         <!--Home-->
         <scene sceneID="b7c-AW-oJy">
             <objects>

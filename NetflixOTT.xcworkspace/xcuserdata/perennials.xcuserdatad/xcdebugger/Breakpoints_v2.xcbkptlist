@@ -3,4 +3,520 @@
    uuid = "89FAC951-A815-4B54-A969-7133D15ADEC0"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5DA69EA-986D-45F7-9995-6CDD8F44C0ED"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetflixOTT/Controllers/PlayVideoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "PlayVideoViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "D5DA69EA-986D-45F7-9995-6CDD8F44C0ED - 400522da086490cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "932">
+               </Location>
+               <Location
+                  uuid = "D5DA69EA-986D-45F7-9995-6CDD8F44C0ED - 400522da08649094"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "932">
+               </Location>
+               <Location
+                  uuid = "D5DA69EA-986D-45F7-9995-6CDD8F44C0ED - 400522da08649137"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "932">
+               </Location>
+               <Location
+                  uuid = "D5DA69EA-986D-45F7-9995-6CDD8F44C0ED - 400522da086491f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "932">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B8D08071-6811-4D8E-9AEE-584794A463F4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetflixOTT/Controllers/PlayVideoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "PlayVideoViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "B8D08071-6811-4D8E-9AEE-584794A463F4 - 400522da086490cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "932">
+               </Location>
+               <Location
+                  uuid = "B8D08071-6811-4D8E-9AEE-584794A463F4 - 400522da08649094"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "932">
+               </Location>
+               <Location
+                  uuid = "B8D08071-6811-4D8E-9AEE-584794A463F4 - 400522da08649137"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "932">
+               </Location>
+               <Location
+                  uuid = "B8D08071-6811-4D8E-9AEE-584794A463F4 - 400522da086491f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "932">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0E8ECA46-F356-4860-B73D-F1DF54CB9CA8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetflixOTT/Controllers/PlayVideoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "PlayVideoViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "0E8ECA46-F356-4860-B73D-F1DF54CB9CA8 - 400522da086497e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "496">
+               </Location>
+               <Location
+                  uuid = "0E8ECA46-F356-4860-B73D-F1DF54CB9CA8 - 400522da08649701"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "0E8ECA46-F356-4860-B73D-F1DF54CB9CA8 - 400522da086497ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "0E8ECA46-F356-4860-B73D-F1DF54CB9CA8 - 400522da0864906e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "252">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "26D9FF98-9B3B-438E-A3BC-AAEDCFE7B8F3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetflixOTT/Controllers/PlayVideoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "PlayVideoViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "26D9FF98-9B3B-438E-A3BC-AAEDCFE7B8F3 - 400522da08649156"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "1412">
+               </Location>
+               <Location
+                  uuid = "26D9FF98-9B3B-438E-A3BC-AAEDCFE7B8F3 - 400522da08649156"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "1312">
+               </Location>
+               <Location
+                  uuid = "26D9FF98-9B3B-438E-A3BC-AAEDCFE7B8F3 - 400522da08649156"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "1400">
+               </Location>
+               <Location
+                  uuid = "26D9FF98-9B3B-438E-A3BC-AAEDCFE7B8F3 - 400522da086491f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "1312">
+               </Location>
+               <Location
+                  uuid = "26D9FF98-9B3B-438E-A3BC-AAEDCFE7B8F3 - 400522da086491f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "1400">
+               </Location>
+               <Location
+                  uuid = "26D9FF98-9B3B-438E-A3BC-AAEDCFE7B8F3 - 400522da086491b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "1312">
+               </Location>
+               <Location
+                  uuid = "26D9FF98-9B3B-438E-A3BC-AAEDCFE7B8F3 - 400522da086491b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.setVideoPlayer() -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "1400">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1543167F-7DBE-4092-8CBE-9C84B6E02E4E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetflixOTT/Controllers/PlayVideoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1543167F-7DBE-4092-8CBE-9C84B6E02E4E - 235bf509b2839b34"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "308">
+               </Location>
+               <Location
+                  uuid = "1543167F-7DBE-4092-8CBE-9C84B6E02E4E - 235bf509b2839b34"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "296">
+               </Location>
+               <Location
+                  uuid = "1543167F-7DBE-4092-8CBE-9C84B6E02E4E - 235bf509b2839b34"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "412">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E2EE5B68-17FB-443C-8C18-B3DCC5DFFFAA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetflixOTT/Controllers/PlayVideoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E2EE5B68-17FB-443C-8C18-B3DCC5DFFFAA - 235bf509b2839b72"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "1364">
+               </Location>
+               <Location
+                  uuid = "E2EE5B68-17FB-443C-8C18-B3DCC5DFFFAA - 235bf509b2839b72"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "1472">
+               </Location>
+               <Location
+                  uuid = "E2EE5B68-17FB-443C-8C18-B3DCC5DFFFAA - 235bf509b2839bb0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "1364">
+               </Location>
+               <Location
+                  uuid = "E2EE5B68-17FB-443C-8C18-B3DCC5DFFFAA - 235bf509b2839bb0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NetflixOTT.PlayVideoViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "NetflixOTT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/perennials/Documents/GitHub/NetflixOTT/NetflixOTT/Controllers/PlayVideoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "1472">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B57F5FAC-FDAB-4F8E-965D-F22696113170"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetflixOTT/Controllers/PlayVideoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "willTransition(to:with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

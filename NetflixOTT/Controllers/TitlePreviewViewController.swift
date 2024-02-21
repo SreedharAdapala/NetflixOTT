@@ -100,7 +100,8 @@ class TitlePreviewViewController: UIViewController {
     public func configure(with model: TitlePreviewViewModel) {
         titleLabel.text = model.title
         overviewLabel.text = model.titleOverview
-        
+        let urlVal = "https://www.youtube.com/embed/\(model.youtubeView.id.videoId)"
+        print("urlVal is \(urlVal)")
         guard let url = URL(string: "https://www.youtube.com/embed/\(model.youtubeView.id.videoId)") else {
             return
         }
