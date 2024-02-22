@@ -192,10 +192,10 @@ extension HomeViewController: HometabTableViewCellDelegate {
 //            let vc = PlayVideoViewController() //TitlePreviewViewController()
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlayVideoViewController") as? PlayVideoViewController
             
-//            vc.configure(with: viewModel)
-//            vc.playtheVideo(with: viewModel)
-            vc?.model = viewModel
+            print("navigating to playvideo")
+//            vc?.model = viewModel
             if let vcVal = vc {
+                vcVal.hidesBottomBarWhenPushed = true
                 self?.navigationController?.pushViewController(vcVal, animated: true)
             }
         }

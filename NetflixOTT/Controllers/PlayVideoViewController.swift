@@ -7,115 +7,111 @@
 
 import UIKit
 import AVKit
+//import MediaPlayer
+
 
 class PlayVideoViewController: UIViewController {
-
-
-
-    @IBOutlet weak var playerViewObj: UIView!
     
-    @IBOutlet weak var playerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var videoPlayer: UIView!
+    @IBOutlet weak var videoPlayerHeight: NSLayoutConstraint!
+    @IBOutlet weak var viewControll: UIView!
+    @IBOutlet weak var stackCtrView: UIStackView!
+    @IBOutlet weak var img10SecBack: UIImageView! {
+        didSet {
+            self.img10SecBack.isUserInteractionEnabled = true
+            self.img10SecBack.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTap10SecBack)))
+        }
+    }
+    @IBOutlet weak var imgPlay: UIImageView! {
+        didSet {
+            self.imgPlay.isUserInteractionEnabled = true
+            self.imgPlay.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapPlayPause)))
+        }
+    }
+    @IBOutlet weak var img10SecFor: UIImageView! {
+        didSet {
+            self.img10SecFor.isUserInteractionEnabled = true
+            self.img10SecFor.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTap10SecNext)))
+        }
+    }
     
-    var playerViewController = AVPlayerViewController()
+    @IBOutlet weak var lbCurrentTime: UILabel!
+    @IBOutlet weak var lbTotalTime: UILabel!
+    @IBOutlet weak var seekSlider: UISlider! {
+        didSet {
+            self.seekSlider.addTarget(self, action: #selector(onTapToSlide), for: .valueChanged)
+        }
+    }
+    @IBOutlet weak var imgFullScreenToggle: UIImageView! {
+        didSet {
+            self.imgFullScreenToggle.isUserInteractionEnabled = true
+            self.imgFullScreenToggle.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapToggleScreen)))
+        }
+    }
     
-//    @IBOutlet weak var videoPlayerViewHeightConstraint: NSLayoutConstraint!
-    //
-    private var player : AVPlayer? = nil
-    private var playerLayer : AVPlayerLayer? = nil
+    @IBOutlet weak var brightnessSlider: UISlider!{
+        didSet{
+            brightnessSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
+        }
+    }
     
-    private var urlStr : String? = nil
-     var model :TitlePreviewViewModel? = nil
+    @IBOutlet weak var volumeObj: UISlider!
     
-//    private let playerViewInstance: UIView = {
-//       
-//        let viewObj = UIView()
-//        viewObj.frame = CGRect(x: 10, y: 20, width: UIScreen.main.bounds.size.width, height: 200)
-//        viewObj.translatesAutoresizingMaskIntoConstraints = false
-//        viewObj.backgroundColor = .red
-////        viewObj.setTitle("Download", for: .normal)
-////        viewObj.setTitleColor(.white, for: .normal)
-//        viewObj.layer.cornerRadius = 8
-//        viewObj.layer.masksToBounds = true
-//        
-//        return viewObj
-//    }()
-    
+    let videoURL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-//      definesPresentationContext = true
-
-        self.playerViewObj.backgroundColor = .red
-
+//        let volumeView = MPVolumeView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+//            
+//            volumeView.isHidden = false
+//            volumeView.alpha = 0.01
+            
+//            view.addSubview(volumeView)
         
-       
+        // Set the initial brightness level
+                setScreenBrightness(level: 0.1)
+        
+        //add tap gesture
+        let tap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        self.videoPlayer.addGestureRecognizer(tap)
     }
     
-    /*
-    //play particular video based on selection
-    func playtheVideo (with model: TitlePreviewViewModel) {
-        
-//        let urlVal = "https://www.youtube.com/embed/\(model.youtubeView.id.videoId)"
-//        print("urlVal is \(urlVal)")
-
-        guard let urlVal = URL(string: "https://www.youtube.com/embed/\(model.youtubeView.id.videoId)")else {
-            return
-        }
-                
-        // Create AVPlayer instance with the video URL
-        player = AVPlayer(url: urlVal)
-
-        // Assign AVPlayer to AVPlayerViewController
-        playerViewController.player = player
-        playerViewController.allowsPictureInPicturePlayback = true
-        playerViewController.delegate = self
-        // Present the AVPlayerViewController
-        present(playerViewController, animated: true) {
-            // Start playing the video
-            self.player?.play()
-        }
+   @objc func viewTapped () {
+        showControlsOnTap()
     }
-*/
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        urlStr = "https://www.youtube.com/embed/\(model?.youtubeView.id.videoId ?? "")"
-print("url is \(urlStr)")
-//        if let val = URL(string: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_5MB.mp4") {
-        
-        if let urlVal = URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4") {
-            let player = AVPlayer(url: urlVal)
-                    let playerLayer = AVPlayerLayer(player: player)
-                    playerLayer.frame = playerViewObj.bounds
-                    playerLayer.videoGravity = .resizeAspectFill
-                    playerViewObj.layer.addSublayer(playerLayer)
-                    player.play()
-        }
+        self.setVideoPlayer()
+        // Set the initial brightness level
+//        brightnessSlider.value = 0.2
+
     }
-    /*
+
+    private var player : AVPlayer? = nil
+    private var playerLayer : AVPlayerLayer? = nil
+    
     private func setVideoPlayer() {
-        guard let url = URL(string: urlStr ?? "") else { return }
+        guard let url = URL(string: videoURL) else { return }
         
         if self.player == nil {
             self.player = AVPlayer(url: url)
             self.playerLayer = AVPlayerLayer(player: self.player)
-//            self.playerLayer?.videoGravity = .resizeAspectFill
-            
-//            var v = self.view
-            
-         //   self.playerLayer?.frame = self.videoPlayerViewObj.bounds
-                // Set the frame of the playerLayer to match the bounds of videoPlayerViewObj
-                self.playerLayer?.frame = playerViewObj.bounds
-                
-                if let playerLayer = self.playerLayer {
-                    playerViewObj.layer.addSublayer(playerLayer)
-                }
+            self.playerLayer?.videoGravity = .resizeAspectFill
+            if self.videoPlayer != nil {
+                self.playerLayer?.frame = self.videoPlayer.bounds
+            } else {
+                self.playerLayer?.frame = self.view.bounds
+            }
+            self.playerLayer?.addSublayer(self.viewControll.layer)
+            if let playerLayer = self.playerLayer {
+                self.view.layer.addSublayer(playerLayer)
+            }
             self.player?.play()
         }
+        self.setObserverToPlayer()
     }
-    */
+    
     private var windowInterface : UIInterfaceOrientation? {
         return self.view.window?.windowScene?.interfaceOrientation
     }
@@ -123,29 +119,158 @@ print("url is \(urlStr)")
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransition(to: newCollection, with: coordinator)
         guard let windowInterface = self.windowInterface else { return }
-        if #available(iOS 16.0, *) {
-            if windowInterface.isPortrait ==  true {
-                self.playerViewHeightConstraint.constant = 300
-            } else {
-                self.playerViewHeightConstraint.constant = self.view.layer.bounds.height
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-                self.playerLayer?.frame = self.view.layer.bounds
+        if windowInterface.isPortrait ==  true {
+            self.videoPlayerHeight.constant = 300
+        } else {
+            self.videoPlayerHeight.constant = self.view.layer.bounds.width
+        }
+        print(self.videoPlayerHeight.constant)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+            self.playerLayer?.frame = self.videoPlayer.bounds
+        })
+    }
+    
+    
+    private var timeObserver : Any? = nil
+    private func setObserverToPlayer() {
+        let interval = CMTime(seconds: 0.3, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+        timeObserver = player?.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { elapsed in
+            self.updatePlayerTime()
+        })
+    }
+    
+    func hideControlsOnTheScreen () {
+//        self.img10SecBack.isHidden = true
+//        self.img10SecFor.isHidden = true
+        seekSlider.isHidden = true
+        stackCtrView.isHidden = true
+        brightnessSlider.isHidden = true
+    }
+    
+    func showControlsOnTap () {
+        
+    }
+    
+    private func updatePlayerTime() {
+//        self.hideControlsOnTheScreen() //
+        
+        guard let currentTime = self.player?.currentTime() else { return }
+        guard let duration = self.player?.currentItem?.duration else { return }
+        
+        let currentTimeInSecond = CMTimeGetSeconds(currentTime)
+        let durationTimeInSecond = CMTimeGetSeconds(duration)
+        
+        if self.isThumbSeek == false {
+            self.seekSlider.value = Float(currentTimeInSecond/durationTimeInSecond)
+        }
+        
+        let value = Float64(self.seekSlider.value) * CMTimeGetSeconds(duration)
+        
+        var hours = value / 3600
+        var mins =  (value / 60).truncatingRemainder(dividingBy: 60)
+        var secs = value.truncatingRemainder(dividingBy: 60)
+        var timeformatter = NumberFormatter()
+        timeformatter.minimumIntegerDigits = 2
+        timeformatter.minimumFractionDigits = 0
+        timeformatter.roundingMode = .down
+        guard let hoursStr = timeformatter.string(from: NSNumber(value: hours)), let minsStr = timeformatter.string(from: NSNumber(value: mins)), let secsStr = timeformatter.string(from: NSNumber(value: secs)) else {
+            return
+        }
+        self.lbCurrentTime.text = "\(hoursStr):\(minsStr):\(secsStr)"
+        
+        hours = durationTimeInSecond / 3600
+        mins = (durationTimeInSecond / 60).truncatingRemainder(dividingBy: 60)
+        secs = durationTimeInSecond.truncatingRemainder(dividingBy: 60)
+        timeformatter = NumberFormatter()
+        timeformatter.minimumIntegerDigits = 2
+        timeformatter.minimumFractionDigits = 0
+        timeformatter.roundingMode = .down
+        guard let hoursStr = timeformatter.string(from: NSNumber(value: hours)), let minsStr = timeformatter.string(from: NSNumber(value: mins)), let secsStr = timeformatter.string(from: NSNumber(value: secs)) else {
+            return
+        }
+        self.lbTotalTime.text = "\(hoursStr):\(minsStr):\(secsStr)"
+    }
+    
+    
+    @objc private func onTap10SecNext() {
+        guard let currentTime = self.player?.currentTime() else { return }
+        let seekTime10Sec = CMTimeGetSeconds(currentTime).advanced(by: 10)
+        let seekTime = CMTime(value: CMTimeValue(seekTime10Sec), timescale: 1)
+        self.player?.seek(to: seekTime, completionHandler: { completed in
+            
+        })
+    }
+    
+    @objc private func onTap10SecBack() {
+        guard let currentTime = self.player?.currentTime() else { return }
+        let seekTime10Sec = CMTimeGetSeconds(currentTime).advanced(by: -10)
+        let seekTime = CMTime(value: CMTimeValue(seekTime10Sec), timescale: 1)
+        self.player?.seek(to: seekTime, completionHandler: { completed in
+            
+        })
+    }
+    
+    @objc private func onTapPlayPause() {
+        if self.player?.timeControlStatus == .playing {
+            self.imgPlay.image = UIImage(systemName: "play.circle")
+            self.player?.pause()
+        } else {
+            self.imgPlay.image = UIImage(systemName: "pause.circle")
+            self.player?.play()
+        }
+    }
+    
+    private var isThumbSeek : Bool = false
+    @objc private func onTapToSlide() {
+        self.isThumbSeek = true
+        guard let duration = self.player?.currentItem?.duration else { return }
+        let value = Float64(self.seekSlider.value) * CMTimeGetSeconds(duration)
+        if value.isNaN == false {
+            let seekTime = CMTime(value: CMTimeValue(value), timescale: 1)
+            self.player?.seek(to: seekTime, completionHandler: { completed in
+                if completed {
+                    self.isThumbSeek = false
+                }
             })
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-
-extension PlayVideoViewController: AVPlayerViewControllerDelegate {
     
+    @objc private func onTapToggleScreen() {
+        if #available(iOS 16.0, *) {
+            guard let windowSceen = self.view.window?.windowScene else { return }
+            if windowSceen.interfaceOrientation == .portrait {
+                windowSceen.requestGeometryUpdate(.iOS(interfaceOrientations: .landscape)) { error in
+                    print(error.localizedDescription)
+                }
+            } else {
+                windowSceen.requestGeometryUpdate(.iOS(interfaceOrientations: .portrait)) { error in
+                    print(error.localizedDescription)
+                }
+            }
+        } else {
+            if UIDevice.current.orientation == .portrait {
+                let orientation = UIInterfaceOrientation.landscapeRight.rawValue
+                UIDevice.current.setValue(orientation, forKey: "orientation")
+            } else {
+                let orientation = UIInterfaceOrientation.portrait.rawValue
+                UIDevice.current.setValue(orientation, forKey: "orientation")
+            }
+        }
+    }
+    
+    func setScreenBrightness(level: Float) {
+            // Make sure the brightness level is within the valid range [0.0, 1.0]
+            let validLevel = max(0.0, min(1.0, level))
+
+            // Set the screen brightness
+            UIScreen.main.brightness = CGFloat(validLevel)
+        }
+    
+    //for brightness change while playing video
+    @IBAction func brightnessSliderValueChanged(_ sender: UISlider) {
+        let brightnessLevel = sender.value
+                setScreenBrightness(level: brightnessLevel)
+        }
 }
+
+
