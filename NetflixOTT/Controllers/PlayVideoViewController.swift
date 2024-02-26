@@ -9,6 +9,11 @@ import UIKit
 import AVKit
 //import MediaPlayer
 
+enum VideoQuality: String {
+    case low = "Low"
+    case medium = "Medium"
+    case high = "High"
+}
 
 class PlayVideoViewController: UIViewController {
     
@@ -54,10 +59,15 @@ class PlayVideoViewController: UIViewController {
             brightnessSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
         }
     }
+    @IBOutlet weak var settingsButton: UIButton!
     
     @IBOutlet weak var volumeObj: UISlider!
     
     let videoURL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    
+    //for hiding/showing controls
+    var showingControls = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        let volumeView = MPVolumeView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
@@ -70,13 +80,15 @@ class PlayVideoViewController: UIViewController {
         // Set the initial brightness level
                 setScreenBrightness(level: 0.1)
         
-        //add tap gesture
-        let tap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
-        self.videoPlayer.addGestureRecognizer(tap)
+      
     }
     
    @objc func viewTapped () {
-        showControlsOnTap()
+       if showingControls == true {
+           showControlsOnTap()
+       } else {
+           hideControlsOnTheScreen()
+       }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -85,7 +97,7 @@ class PlayVideoViewController: UIViewController {
         self.setVideoPlayer()
         // Set the initial brightness level
 //        brightnessSlider.value = 0.2
-
+        self.view.bringSubviewToFront(settingsButton)
     }
 
     private var player : AVPlayer? = nil
@@ -107,10 +119,78 @@ class PlayVideoViewController: UIViewController {
             if let playerLayer = self.playerLayer {
                 self.view.layer.addSublayer(playerLayer)
             }
+            // Add observer for playback status changes
+                   player?.addObserver(self, forKeyPath: "status", options: .new, context: nil)
+            
+            //add tap gesture
+            let tap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+            self.view.addGestureRecognizer(tap)
             self.player?.play()
         }
         self.setObserverToPlayer()
     }
+    
+    func switchToQuality(_ quality: VideoQuality, forURL url: URL) async {
+           let asset = AVURLAsset(url: url)
+           
+           // Find the appropriate media selection group
+           guard let group = asset.mediaSelectionGroup(forMediaCharacteristic: .audible) else {
+               return
+           }
+           
+           // Find the selected media option
+           let options = group.options
+           for option in options {
+               do {
+                   if option.displayName == quality.rawValue {
+                       // Select the desired media option
+                       try await asset.load(.preferredMediaSelection)
+                       break
+                   }
+               } catch {
+                   
+               }
+           }
+           
+           // Create a new AVPlayerItem with the updated asset
+           let playerItem = AVPlayerItem(asset: asset)
+           
+           // Replace the current player item with the new one
+           player?.replaceCurrentItem(with: playerItem)
+           
+           // Play the video
+           player?.play()
+       }
+
+    // Observe changes in the AVPlayer status
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "status" {
+            if player?.status == .failed {
+                print("Failed to load video")
+            } else if player?.status == .readyToPlay {
+                print("Video is ready to play")
+                // You can adjust quality here if needed
+                adjustVideoQuality()
+            }
+        }
+    }
+    
+    // Adjust video quality based on your criteria
+        private func adjustVideoQuality() {
+            // You can implement logic here to dynamically adjust the video quality
+            // For example, you can change the preferredPeakBitRate of the AVPlayerItem
+
+            // Example: Set the preferredPeakBitRate to limit the video quality
+            let maximumBitrate: Double = 1_000_000 // 1 Mbps
+            if let currentItem = player?.currentItem {
+                currentItem.preferredPeakBitRate = maximumBitrate
+            }
+        }
+
+        deinit {
+            // Remove the observer when the view controller is deallocated
+            player?.removeObserver(self, forKeyPath: "status")
+        }
     
     private var windowInterface : UIInterfaceOrientation? {
         return self.view.window?.windowScene?.interfaceOrientation
@@ -136,6 +216,7 @@ class PlayVideoViewController: UIViewController {
         let interval = CMTime(seconds: 0.3, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         timeObserver = player?.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { elapsed in
             self.updatePlayerTime()
+//            self.hideControlsOnTheScreen()
         })
     }
     
@@ -145,10 +226,14 @@ class PlayVideoViewController: UIViewController {
         seekSlider.isHidden = true
         stackCtrView.isHidden = true
         brightnessSlider.isHidden = true
+        showingControls = true
     }
     
     func showControlsOnTap () {
-        
+        seekSlider.isHidden = false
+        stackCtrView.isHidden = false
+        brightnessSlider.isHidden = false
+        showingControls = false
     }
     
     private func updatePlayerTime() {
@@ -239,19 +324,24 @@ class PlayVideoViewController: UIViewController {
         if #available(iOS 16.0, *) {
             guard let windowSceen = self.view.window?.windowScene else { return }
             if windowSceen.interfaceOrientation == .portrait {
+                //for hiding tabbar
+                super.hidesBottomBarWhenPushed = true
                 windowSceen.requestGeometryUpdate(.iOS(interfaceOrientations: .landscape)) { error in
                     print(error.localizedDescription)
                 }
             } else {
+                super.hidesBottomBarWhenPushed = false
                 windowSceen.requestGeometryUpdate(.iOS(interfaceOrientations: .portrait)) { error in
                     print(error.localizedDescription)
                 }
             }
         } else {
             if UIDevice.current.orientation == .portrait {
+                super.hidesBottomBarWhenPushed = false
                 let orientation = UIInterfaceOrientation.landscapeRight.rawValue
                 UIDevice.current.setValue(orientation, forKey: "orientation")
             } else {
+                super.hidesBottomBarWhenPushed = true
                 let orientation = UIInterfaceOrientation.portrait.rawValue
                 UIDevice.current.setValue(orientation, forKey: "orientation")
             }
@@ -271,6 +361,21 @@ class PlayVideoViewController: UIViewController {
         let brightnessLevel = sender.value
                 setScreenBrightness(level: brightnessLevel)
         }
+    
+    @IBAction func settingsButtonAction(_ sender: Any) {
+        let contentvc = QualityControlViewController.instance()
+        contentvc.view.layer.cornerRadius = 10
+        contentvc.newQualityControlVC_CallBack = {
+            //
+            DispatchQueue.main.async {
+                contentvc.dismiss(animated: true)
+            }
+        }
+        
+        let popupVC = PopupViewController(contentController: contentvc,popupWidth: 200,popupHeight: 200)
+        self.present(popupVC, animated: true)
+    }
+    
 }
 
 

@@ -22,7 +22,12 @@
 		487135F02B7332210045599C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487135EF2B7332210045599C /* HeaderView.swift */; };
 		487135F22B735FF90045599C /* TitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487135F12B735FF90045599C /* TitleModel.swift */; };
 		487135F42B73613F0045599C /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487135F32B73613F0045599C /* TitleCollectionViewCell.swift */; };
+		487B331C2B8C6D520027226D /* QualityChangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487B331A2B8C6D520027226D /* QualityChangeCell.swift */; };
+		487B331D2B8C6D520027226D /* QualityChangeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487B331B2B8C6D520027226D /* QualityChangeCell.xib */; };
 		48C7FE812B8703D800D571A5 /* BaseTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7FE802B8703D800D571A5 /* BaseTabbarViewController.swift */; };
+		48C7FE832B8862EC00D571A5 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7FE822B8862EC00D571A5 /* PopupViewController.swift */; };
+		48C7FE852B88678B00D571A5 /* QualityControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7FE842B88678B00D571A5 /* QualityControlViewController.swift */; };
+		48C7FE872B88686F00D571A5 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7FE862B88686F00D571A5 /* NSObject.swift */; };
 		48CDE3E12B847B6D0015BD52 /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CDE3E02B847B6D0015BD52 /* PlayVideoViewController.swift */; };
 		48D53E432B737ABF00FAE075 /* APICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D53E422B737ABF00FAE075 /* APICalls.swift */; };
 		48D94AA32B720E7B00315F46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D94AA22B720E7B00315F46 /* AppDelegate.swift */; };
@@ -75,7 +80,12 @@
 		487135EF2B7332210045599C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		487135F12B735FF90045599C /* TitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModel.swift; sourceTree = "<group>"; };
 		487135F32B73613F0045599C /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		487B331A2B8C6D520027226D /* QualityChangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualityChangeCell.swift; sourceTree = "<group>"; };
+		487B331B2B8C6D520027226D /* QualityChangeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QualityChangeCell.xib; sourceTree = "<group>"; };
 		48C7FE802B8703D800D571A5 /* BaseTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabbarViewController.swift; sourceTree = "<group>"; };
+		48C7FE822B8862EC00D571A5 /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		48C7FE842B88678B00D571A5 /* QualityControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualityControlViewController.swift; sourceTree = "<group>"; };
+		48C7FE862B88686F00D571A5 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		48CDE3E02B847B6D0015BD52 /* PlayVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
 		48D53E422B737ABF00FAE075 /* APICalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICalls.swift; sourceTree = "<group>"; };
 		48D94A9F2B720E7B00315F46 /* NetflixOTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixOTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				48E80EFD2B73CAF200F16019 /* String+Additions.swift */,
+				48C7FE862B88686F00D571A5 /* NSObject.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -198,6 +209,7 @@
 			children = (
 				487135F12B735FF90045599C /* TitleModel.swift */,
 				4829E0312B7A05F90052AF3C /* YoutubeSearchResponse.swift */,
+				48C7FE822B8862EC00D571A5 /* PopupViewController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,6 +286,7 @@
 				48D94ADA2B721D2400315F46 /* DownloadViewController.swift */,
 				4829E0332B7A07600052AF3C /* TitlePreviewViewController.swift */,
 				48CDE3E02B847B6D0015BD52 /* PlayVideoViewController.swift */,
+				48C7FE842B88678B00D571A5 /* QualityControlViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -285,6 +298,8 @@
 				487135E72B7222700045599C /* HomeTabCell.xib */,
 				4829E0352B7B4DD70052AF3C /* UpcomingTitleTableViewCell.swift */,
 				4829E0362B7B4DD70052AF3C /* UpcomingTitleTableViewCell.xib */,
+				487B331A2B8C6D520027226D /* QualityChangeCell.swift */,
+				487B331B2B8C6D520027226D /* QualityChangeCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -401,6 +416,7 @@
 				487135E92B7222700045599C /* HomeTabCell.xib in Resources */,
 				4829E0382B7B4DD70052AF3C /* UpcomingTitleTableViewCell.xib in Resources */,
 				48D94AB22B720E7E00315F46 /* LaunchScreen.storyboard in Resources */,
+				487B331D2B8C6D520027226D /* QualityChangeCell.xib in Resources */,
 				48D94AAF2B720E7E00315F46 /* Assets.xcassets in Resources */,
 				48D94AAA2B720E7B00315F46 /* Main.storyboard in Resources */,
 			);
@@ -534,7 +550,11 @@
 				48D94AD92B721D0F00315F46 /* SearchViewController.swift in Sources */,
 				4829E03C2B7DDB640052AF3C /* HomeTabPageViewController.swift in Sources */,
 				4829E0342B7A07600052AF3C /* TitlePreviewViewController.swift in Sources */,
+				48C7FE832B8862EC00D571A5 /* PopupViewController.swift in Sources */,
 				48D53E432B737ABF00FAE075 /* APICalls.swift in Sources */,
+				48C7FE852B88678B00D571A5 /* QualityControlViewController.swift in Sources */,
+				487B331C2B8C6D520027226D /* QualityChangeCell.swift in Sources */,
+				48C7FE872B88686F00D571A5 /* NSObject.swift in Sources */,
 				48CDE3E12B847B6D0015BD52 /* PlayVideoViewController.swift in Sources */,
 				4829E0302B7A05C60052AF3C /* TitlePreviewViewModel.swift in Sources */,
 				487135F02B7332210045599C /* HeaderView.swift in Sources */,
