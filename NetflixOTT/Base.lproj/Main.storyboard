@@ -214,7 +214,7 @@
                                                 </constraints>
                                             </slider>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmp-HA-MyK">
-                                                <rect key="frame" x="318" y="40" width="51" height="34.333333333333343"/>
+                                                <rect key="frame" x="318" y="50" width="51" height="34.333333333333343"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34.333333333333343" id="4nO-zJ-B7w"/>
                                                     <constraint firstAttribute="width" constant="51" id="9hb-hc-LTf"/>
@@ -230,7 +230,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="cXI-Jo-sB2" firstAttribute="centerY" secondItem="aR0-ZE-BXk" secondAttribute="centerY" id="4eb-W5-2Cs"/>
-                                            <constraint firstItem="gmp-HA-MyK" firstAttribute="top" secondItem="9Sq-Kb-UY4" secondAttribute="top" constant="40" id="6x7-Lc-caH"/>
+                                            <constraint firstItem="gmp-HA-MyK" firstAttribute="top" secondItem="9Sq-Kb-UY4" secondAttribute="top" constant="50" id="6x7-Lc-caH"/>
                                             <constraint firstAttribute="trailing" secondItem="cXI-Jo-sB2" secondAttribute="trailing" constant="15" id="7GQ-tS-FIG"/>
                                             <constraint firstItem="wZH-nh-zdK" firstAttribute="centerY" secondItem="9Sq-Kb-UY4" secondAttribute="centerY" id="FJA-bl-yK1"/>
                                             <constraint firstItem="7lL-08-RUQ" firstAttribute="centerY" secondItem="MK6-nF-mB0" secondAttribute="centerY" id="PHV-jN-jbP"/>

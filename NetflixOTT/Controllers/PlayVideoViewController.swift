@@ -63,31 +63,29 @@ class PlayVideoViewController: UIViewController {
     
     @IBOutlet weak var volumeObj: UISlider!
     
-    let videoURL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    //sample m3u8 URL's
+//http://playertest.longtailvideo.com/adaptive/wowzaid3/playlist.m3u8
+//http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8
+//http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8
+    
+    let videoURL = "http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8"
     
     //for hiding/showing controls
     var showingControls = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let volumeView = MPVolumeView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-//            
-//            volumeView.isHidden = false
-//            volumeView.alpha = 0.01
-            
-//            view.addSubview(volumeView)
         
         // Set the initial brightness level
                 setScreenBrightness(level: 0.1)
         
-      
     }
     
    @objc func viewTapped () {
        if showingControls == true {
-           showControlsOnTap()
-       } else {
            hideControlsOnTheScreen()
+       } else {
+           showControlsOnTap()
        }
     }
     
@@ -124,7 +122,7 @@ class PlayVideoViewController: UIViewController {
             
             //add tap gesture
             let tap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
-            self.view.addGestureRecognizer(tap)
+            self.viewControll.addGestureRecognizer(tap)
             self.player?.play()
         }
         self.setObserverToPlayer()
@@ -221,19 +219,34 @@ class PlayVideoViewController: UIViewController {
     }
     
     func hideControlsOnTheScreen () {
-//        self.img10SecBack.isHidden = true
-//        self.img10SecFor.isHidden = true
+        self.img10SecBack.isHidden = true
+        self.img10SecFor.isHidden = true
         seekSlider.isHidden = true
         stackCtrView.isHidden = true
         brightnessSlider.isHidden = true
-        showingControls = true
+        imgFullScreenToggle.isHidden = true
+        lbCurrentTime.isHidden = true
+        lbTotalTime.isHidden = true
+        settingsButton.isHidden = true
+//        self.navigationController?.navigationItem.hidesBackButton = true
+//        self.tabBarController?.navigationItem.hidesBackButton = true
+        showingControls = false
     }
     
     func showControlsOnTap () {
+        self.img10SecBack.isHidden = false
+        self.img10SecFor.isHidden = false
         seekSlider.isHidden = false
         stackCtrView.isHidden = false
         brightnessSlider.isHidden = false
         showingControls = false
+        imgFullScreenToggle.isHidden = false
+        lbCurrentTime.isHidden = false
+        lbTotalTime.isHidden = false
+        settingsButton.isHidden = false
+//        self.navigationController?.navigationItem.hidesBackButton = false
+//        self.tabBarController?.navigationItem.hidesBackButton = false
+        showingControls = true
     }
     
     private func updatePlayerTime() {
