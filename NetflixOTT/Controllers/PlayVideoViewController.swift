@@ -68,8 +68,8 @@ class PlayVideoViewController: UIViewController {
 //http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8
 //http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8
     
-    let videoURL = "http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8"
-    
+    var videoURL = "http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8"
+    var currentSeekTime = CMTime ()
     //for hiding/showing controls
     var showingControls = true
     
@@ -92,16 +92,20 @@ class PlayVideoViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.setVideoPlayer()
+        self.setVideoPlayer(qualityChanged: false)
         // Set the initial brightness level
 //        brightnessSlider.value = 0.2
         self.view.bringSubviewToFront(settingsButton)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        stopVideoPlayer()
     }
 
     private var player : AVPlayer? = nil
     private var playerLayer : AVPlayerLayer? = nil
     
-    private func setVideoPlayer() {
+    private func setVideoPlayer(qualityChanged:Bool) {
         guard let url = URL(string: videoURL) else { return }
         
         if self.player == nil {
@@ -124,6 +128,13 @@ class PlayVideoViewController: UIViewController {
             let tap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
             self.viewControll.addGestureRecognizer(tap)
             self.player?.play()
+            if qualityChanged == true {
+                if self.player?.status == .readyToPlay {
+                    self.player?.seek(to: currentSeekTime, completionHandler: { completed in
+                        
+                    })
+                }
+            }
         }
         self.setObserverToPlayer()
     }
@@ -198,9 +209,12 @@ class PlayVideoViewController: UIViewController {
         super.willTransition(to: newCollection, with: coordinator)
         guard let windowInterface = self.windowInterface else { return }
         if windowInterface.isPortrait ==  true {
-            self.videoPlayerHeight.constant = 300
+            self.videoPlayerHeight.constant = 280 //300
+            navigationItem.hidesBackButton = false
         } else {
             self.videoPlayerHeight.constant = self.view.layer.bounds.width
+            navigationItem.hidesBackButton = true
+
         }
         print(self.videoPlayerHeight.constant)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
@@ -211,10 +225,10 @@ class PlayVideoViewController: UIViewController {
     
     private var timeObserver : Any? = nil
     private func setObserverToPlayer() {
+        timeObserver = nil
         let interval = CMTime(seconds: 0.3, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         timeObserver = player?.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { elapsed in
             self.updatePlayerTime()
-//            self.hideControlsOnTheScreen()
         })
     }
     
@@ -294,6 +308,8 @@ class PlayVideoViewController: UIViewController {
         guard let currentTime = self.player?.currentTime() else { return }
         let seekTime10Sec = CMTimeGetSeconds(currentTime).advanced(by: 10)
         let seekTime = CMTime(value: CMTimeValue(seekTime10Sec), timescale: 1)
+        currentSeekTime = seekTime //ADDED
+        
         self.player?.seek(to: seekTime, completionHandler: { completed in
             
         })
@@ -303,6 +319,7 @@ class PlayVideoViewController: UIViewController {
         guard let currentTime = self.player?.currentTime() else { return }
         let seekTime10Sec = CMTimeGetSeconds(currentTime).advanced(by: -10)
         let seekTime = CMTime(value: CMTimeValue(seekTime10Sec), timescale: 1)
+        currentSeekTime = seekTime //ADDED
         self.player?.seek(to: seekTime, completionHandler: { completed in
             
         })
@@ -339,22 +356,26 @@ class PlayVideoViewController: UIViewController {
             if windowSceen.interfaceOrientation == .portrait {
                 //for hiding tabbar
                 super.hidesBottomBarWhenPushed = true
+                navigationItem.hidesBackButton = true //CHECK
                 windowSceen.requestGeometryUpdate(.iOS(interfaceOrientations: .landscape)) { error in
                     print(error.localizedDescription)
                 }
             } else {
                 super.hidesBottomBarWhenPushed = false
+                navigationItem.hidesBackButton = false //CHECK
                 windowSceen.requestGeometryUpdate(.iOS(interfaceOrientations: .portrait)) { error in
                     print(error.localizedDescription)
                 }
             }
         } else {
             if UIDevice.current.orientation == .portrait {
-                super.hidesBottomBarWhenPushed = false
+                hidesBottomBarWhenPushed = false
+                navigationItem.hidesBackButton = true //CHECK
                 let orientation = UIInterfaceOrientation.landscapeRight.rawValue
                 UIDevice.current.setValue(orientation, forKey: "orientation")
-            } else {
-                super.hidesBottomBarWhenPushed = true
+            } else { //moving to landscape
+                hidesBottomBarWhenPushed = true
+                navigationItem.hidesBackButton = false
                 let orientation = UIInterfaceOrientation.portrait.rawValue
                 UIDevice.current.setValue(orientation, forKey: "orientation")
             }
@@ -378,17 +399,34 @@ class PlayVideoViewController: UIViewController {
     @IBAction func settingsButtonAction(_ sender: Any) {
         let contentvc = QualityControlViewController.instance()
         contentvc.view.layer.cornerRadius = 10
-        contentvc.newQualityControlVC_CallBack = {
-            //
+//        contentvc.delegate = self
+        contentvc.newQualityControlVC_CallBack = {(selectedQuality) -> Void in
+//            //
+            self.stopVideoPlayer()
             DispatchQueue.main.async {
+                if selectedQuality == 0 {
+                    self.videoURL = "http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8"
+                    self.setVideoPlayer(qualityChanged: true) //call this to update player with new URL
+                } else if selectedQuality == 1 {
+                    self.videoURL = "http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8"
+                    self.setVideoPlayer(qualityChanged: true) //call this to update player with new URL
+                } else if selectedQuality == 2 {
+                    self.videoURL = "http://playertest.longtailvideo.com/adaptive/wowzaid3/playlist.m3u8"
+                    self.setVideoPlayer(qualityChanged: true) //call this to update player with new URL
+                }
                 contentvc.dismiss(animated: true)
             }
+            
         }
         
         let popupVC = PopupViewController(contentController: contentvc,popupWidth: 200,popupHeight: 200)
         self.present(popupVC, animated: true)
     }
     
+    // Function to stop the video player
+       func stopVideoPlayer() {
+           player?.pause()
+           player = nil // Set to nil to release the AVPlayer instance
+       }
+    
 }
-
-

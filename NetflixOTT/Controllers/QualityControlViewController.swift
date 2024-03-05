@@ -7,6 +7,17 @@
 
 import UIKit
 
+protocol QualityConrolProtocol:AnyObject {
+    func sendQualitySelection (qualityID:Int)
+    func closeButtonClicked()
+}
+
+extension QualityConrolProtocol {
+    func sendQualitySelection(qualityID:Int){
+        // leaving this empty
+    }
+}
+
 class QualityControlViewController: UIViewController {
 
     @IBOutlet weak var closeButton: UIButton!
@@ -15,9 +26,11 @@ class QualityControlViewController: UIViewController {
     
     @IBOutlet weak var tableViewObj: UITableView!
     
-    var newQualityControlVC_CallBack:(()->())?
+    var newQualityControlVC_CallBack:((Int)->())?
     
     let qualityArr = ["low","medium","high"]
+    
+    var delegate:QualityConrolProtocol?
     
     class func instance() -> Self {
         let thisStoryBorad = UIStoryboard(name: "Main", bundle: nil)
@@ -42,7 +55,7 @@ class QualityControlViewController: UIViewController {
     }
     
     @IBAction func closeButtonAction(_ sender: Any) {
-        self.newQualityControlVC_CallBack!()
+        self.newQualityControlVC_CallBack!(4)
     }
     
 
@@ -68,6 +81,26 @@ extension QualityControlViewController:UITableViewDataSource,UITableViewDelegate
         let cell = tableViewObj.dequeueReusableCell(withIdentifier: "QualityChangeCell") as!QualityChangeCell
         cell.titleLabel.text = qualityArr[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+//            self.delegate?.sendQualitySelection(qualityID: 0)
+            self.newQualityControlVC_CallBack!(0)
+
+        } else if indexPath.row == 1 {
+//            self.delegate?.sendQualitySelection(qualityID: 1)
+            self.newQualityControlVC_CallBack!(1)
+        } else if indexPath.row == 2 {
+            self.newQualityControlVC_CallBack!(2)
+        }
+        else if indexPath.row == 3 {
+//            self.delegate?.sendQualitySelection(qualityID: 2)
+//            self.newQualityControlVC_CallBack!(3)
+            self.newQualityControlVC_CallBack!(2)
+
+
+        }
     }
 }
 
