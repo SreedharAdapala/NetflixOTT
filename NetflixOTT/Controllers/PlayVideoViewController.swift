@@ -70,6 +70,8 @@ class PlayVideoViewController: UIViewController {
     
     var videoURL = "http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8"
     var currentSeekTime = CMTime ()
+    
+    var previousSeekTimeInSeconds = 0.0 //ADDED
     //for hiding/showing controls
     var showingControls = true
     
@@ -95,7 +97,7 @@ class PlayVideoViewController: UIViewController {
         self.setVideoPlayer(qualityChanged: false)
         // Set the initial brightness level
 //        brightnessSlider.value = 0.2
-        self.view.bringSubviewToFront(settingsButton)
+//        self.videoPlayer.bringSubviewToFront(settingsButton)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -129,11 +131,29 @@ class PlayVideoViewController: UIViewController {
             self.viewControll.addGestureRecognizer(tap)
             self.player?.play()
             if qualityChanged == true {
-                if self.player?.status == .readyToPlay {
+                print(self.player?.status)
+//                let seekTime = CMTime(seconds: 30, preferredTimescale: 1)
+
+//                let seekTime =  CMTime(value: CMTimeValue(Int64()), timescale: 1)
+                
+//                self.player?.seek(to: seekTime, completionHandler: { (completed) in
+//                    self.player?.seek(to: seekTime, completionHandler: { (completed) in
+//                                    if completed {
+//                                        // Do something after seeking is completed
+//                                    }
+//                                })
+                    
+//                player.currentItem?.seek(to: seekTime, completionHandler:  { (finished) in print("Seeking finished") self.playbackStarted() })
+//                
+//                self.player?.seek(to: currentSeekTime, completionHandler: { completed in
+//                    
+//                })
+                
                     self.player?.seek(to: currentSeekTime, completionHandler: { completed in
                         
                     })
-                }
+                
+//                seekToPreviousPlayTime()
             }
         }
         self.setObserverToPlayer()
@@ -209,10 +229,10 @@ class PlayVideoViewController: UIViewController {
         super.willTransition(to: newCollection, with: coordinator)
         guard let windowInterface = self.windowInterface else { return }
         if windowInterface.isPortrait ==  true {
-            self.videoPlayerHeight.constant = 280 //300
+            self.videoPlayerHeight.constant = 300
             navigationItem.hidesBackButton = false
         } else {
-            self.videoPlayerHeight.constant = self.view.layer.bounds.width
+            self.videoPlayerHeight.constant =  self.view.layer.bounds.width
             navigationItem.hidesBackButton = true
 
         }
@@ -307,6 +327,7 @@ class PlayVideoViewController: UIViewController {
     @objc private func onTap10SecNext() {
         guard let currentTime = self.player?.currentTime() else { return }
         let seekTime10Sec = CMTimeGetSeconds(currentTime).advanced(by: 10)
+        previousSeekTimeInSeconds = seekTime10Sec
         let seekTime = CMTime(value: CMTimeValue(seekTime10Sec), timescale: 1)
         currentSeekTime = seekTime //ADDED
         
@@ -318,8 +339,21 @@ class PlayVideoViewController: UIViewController {
     @objc private func onTap10SecBack() {
         guard let currentTime = self.player?.currentTime() else { return }
         let seekTime10Sec = CMTimeGetSeconds(currentTime).advanced(by: -10)
+        previousSeekTimeInSeconds = seekTime10Sec
         let seekTime = CMTime(value: CMTimeValue(seekTime10Sec), timescale: 1)
         currentSeekTime = seekTime //ADDED
+        self.player?.seek(to: seekTime, completionHandler: { completed in
+            
+        })
+    }
+    
+    func seekToPreviousPlayTime () {
+        guard let currentTime = self.player?.currentTime() else { return }
+        let seekTime10Sec = CMTimeGetSeconds(currentTime).advanced(by: previousSeekTimeInSeconds)
+        
+        let seekTime = CMTime(value: CMTimeValue(seekTime10Sec), timescale: 1)
+        currentSeekTime = seekTime //ADDED
+        
         self.player?.seek(to: seekTime, completionHandler: { completed in
             
         })
@@ -345,6 +379,9 @@ class PlayVideoViewController: UIViewController {
             self.player?.seek(to: seekTime, completionHandler: { completed in
                 if completed {
                     self.isThumbSeek = false
+                    self.currentSeekTime = seekTime
+//                    let seekTime10Sec = CMTimeGetSeconds(duration).advanced(by: 0)
+//                    self.previousSeekTimeInSeconds = seekTime10Sec
                 }
             })
         }
@@ -411,7 +448,8 @@ class PlayVideoViewController: UIViewController {
                     self.videoURL = "http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8"
                     self.setVideoPlayer(qualityChanged: true) //call this to update player with new URL
                 } else if selectedQuality == 2 {
-                    self.videoURL = "http://playertest.longtailvideo.com/adaptive/wowzaid3/playlist.m3u8"
+//                    self.videoURL = "http://playertest.longtailvideo.com/adaptive/wowzaid3/playlist.m3u8"
+                    self.videoURL = "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
                     self.setVideoPlayer(qualityChanged: true) //call this to update player with new URL
                 }
                 contentvc.dismiss(animated: true)
