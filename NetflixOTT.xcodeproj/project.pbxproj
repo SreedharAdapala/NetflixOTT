@@ -24,6 +24,7 @@
 		487135F42B73613F0045599C /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487135F32B73613F0045599C /* TitleCollectionViewCell.swift */; };
 		487B331C2B8C6D520027226D /* QualityChangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487B331A2B8C6D520027226D /* QualityChangeCell.swift */; };
 		487B331D2B8C6D520027226D /* QualityChangeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487B331B2B8C6D520027226D /* QualityChangeCell.xib */; };
+		48C38C0B2B9EF2E700AFA8DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48C38C0A2B9EF2E700AFA8DA /* GoogleService-Info.plist */; };
 		48C7FE812B8703D800D571A5 /* BaseTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7FE802B8703D800D571A5 /* BaseTabbarViewController.swift */; };
 		48C7FE832B8862EC00D571A5 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7FE822B8862EC00D571A5 /* PopupViewController.swift */; };
 		48C7FE852B88678B00D571A5 /* QualityControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7FE842B88678B00D571A5 /* QualityControlViewController.swift */; };
@@ -82,6 +83,7 @@
 		487135F32B73613F0045599C /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		487B331A2B8C6D520027226D /* QualityChangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualityChangeCell.swift; sourceTree = "<group>"; };
 		487B331B2B8C6D520027226D /* QualityChangeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QualityChangeCell.xib; sourceTree = "<group>"; };
+		48C38C0A2B9EF2E700AFA8DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		48C7FE802B8703D800D571A5 /* BaseTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabbarViewController.swift; sourceTree = "<group>"; };
 		48C7FE822B8862EC00D571A5 /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		48C7FE842B88678B00D571A5 /* QualityControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualityControlViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				48D94AAE2B720E7E00315F46 /* Assets.xcassets */,
 				48D94AB02B720E7E00315F46 /* LaunchScreen.storyboard */,
 				48D94AB32B720E7E00315F46 /* Info.plist */,
+				48C38C0A2B9EF2E700AFA8DA /* GoogleService-Info.plist */,
 				48D94AAB2B720E7B00315F46 /* NetflixOTT.xcdatamodeld */,
 			);
 			path = NetflixOTT;
@@ -419,6 +422,7 @@
 				487B331D2B8C6D520027226D /* QualityChangeCell.xib in Resources */,
 				48D94AAF2B720E7E00315F46 /* Assets.xcassets in Resources */,
 				48D94AAA2B720E7B00315F46 /* Main.storyboard in Resources */,
+				48C38C0B2B9EF2E700AFA8DA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
