@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
 
     let sectionTitles: [String] = ["Trending Movies", "Trending Tv", "Popular", "Upcoming Movies", "Top rated"]
 
-    
+    //MARK: - methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
