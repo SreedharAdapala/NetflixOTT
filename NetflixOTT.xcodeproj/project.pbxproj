@@ -24,6 +24,7 @@
 		487135F42B73613F0045599C /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487135F32B73613F0045599C /* TitleCollectionViewCell.swift */; };
 		487B331C2B8C6D520027226D /* QualityChangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487B331A2B8C6D520027226D /* QualityChangeCell.swift */; };
 		487B331D2B8C6D520027226D /* QualityChangeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487B331B2B8C6D520027226D /* QualityChangeCell.xib */; };
+		48AE9F282BA047FB00F4E38E /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE9F272BA047FB00F4E38E /* Generics.swift */; };
 		48C38C0B2B9EF2E700AFA8DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48C38C0A2B9EF2E700AFA8DA /* GoogleService-Info.plist */; };
 		48C7FE812B8703D800D571A5 /* BaseTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7FE802B8703D800D571A5 /* BaseTabbarViewController.swift */; };
 		48C7FE832B8862EC00D571A5 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7FE822B8862EC00D571A5 /* PopupViewController.swift */; };
@@ -83,6 +84,7 @@
 		487135F32B73613F0045599C /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		487B331A2B8C6D520027226D /* QualityChangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualityChangeCell.swift; sourceTree = "<group>"; };
 		487B331B2B8C6D520027226D /* QualityChangeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QualityChangeCell.xib; sourceTree = "<group>"; };
+		48AE9F272BA047FB00F4E38E /* Generics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generics.swift; sourceTree = "<group>"; };
 		48C38C0A2B9EF2E700AFA8DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		48C7FE802B8703D800D571A5 /* BaseTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabbarViewController.swift; sourceTree = "<group>"; };
 		48C7FE822B8862EC00D571A5 /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			children = (
 				48D53E422B737ABF00FAE075 /* APICalls.swift */,
 				4829E0392B7DD1F40052AF3C /* GlobalConstants.swift */,
+				48AE9F272BA047FB00F4E38E /* Generics.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				48CDE3E12B847B6D0015BD52 /* PlayVideoViewController.swift in Sources */,
 				4829E0302B7A05C60052AF3C /* TitlePreviewViewModel.swift in Sources */,
 				487135F02B7332210045599C /* HeaderView.swift in Sources */,
+				48AE9F282BA047FB00F4E38E /* Generics.swift in Sources */,
 				4829E03A2B7DD1F40052AF3C /* GlobalConstants.swift in Sources */,
 				48D94AAD2B720E7B00315F46 /* NetflixOTT.xcdatamodeld in Sources */,
 				48D94AA72B720E7B00315F46 /* HomeViewController.swift in Sources */,

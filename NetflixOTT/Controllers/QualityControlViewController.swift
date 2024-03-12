@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAnalytics
 
 protocol QualityConrolProtocol:AnyObject {
     func sendQualitySelection (qualityID:Int)
@@ -87,20 +88,25 @@ extension QualityControlViewController:UITableViewDataSource,UITableViewDelegate
         if indexPath.row == 0 {
 //            self.delegate?.sendQualitySelection(qualityID: 0)
             self.newQualityControlVC_CallBack!(0)
-
+            changeQuality(qualityType: 0)
         } else if indexPath.row == 1 {
 //            self.delegate?.sendQualitySelection(qualityID: 1)
             self.newQualityControlVC_CallBack!(1)
+            changeQuality(qualityType: 1)
         } else if indexPath.row == 2 {
             self.newQualityControlVC_CallBack!(2)
+            changeQuality(qualityType: 2)
         }
         else if indexPath.row == 3 {
 //            self.delegate?.sendQualitySelection(qualityID: 2)
 //            self.newQualityControlVC_CallBack!(3)
             self.newQualityControlVC_CallBack!(2)
-
-
+            changeQuality(qualityType: 2)
         }
+    }
+    
+    func changeQuality (qualityType:Int) {
+        Generics.shared.logEvent(id: "QualityControlVC", itemName: "changeQuality \(qualityType)")
     }
 }
 

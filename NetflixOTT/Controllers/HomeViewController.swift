@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FirebaseAnalytics
 
 enum Sections: Int {
     case TrendingMovies = 0
@@ -32,6 +32,8 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         configureNavbar()
         self.setTableView()
+        
+        Generics.shared.logEvent(id: "HomeVC", itemName: "viewdidload function call")
     }
 
     func setTableView () {
