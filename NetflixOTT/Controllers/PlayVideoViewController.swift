@@ -21,6 +21,8 @@ class PlayVideoViewController: UIViewController {
     @IBOutlet weak var videoPlayerHeight: NSLayoutConstraint!
     @IBOutlet weak var viewControll: UIView!
     @IBOutlet weak var stackCtrView: UIStackView!
+    
+    
     @IBOutlet weak var img10SecBack: UIImageView! {
         didSet {
             self.img10SecBack.isUserInteractionEnabled = true
@@ -63,6 +65,7 @@ class PlayVideoViewController: UIViewController {
     
     @IBOutlet weak var volumeObj: UISlider!
     
+    @IBOutlet weak var subTitleLabel: UILabel!
     //sample m3u8 URL's
 //http://playertest.longtailvideo.com/adaptive/wowzaid3/playlist.m3u8
 //http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8
@@ -236,8 +239,33 @@ class PlayVideoViewController: UIViewController {
         let interval = CMTime(seconds: 0.3, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         timeObserver = player?.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { elapsed in
             self.updatePlayerTime()
+            
+            //for subtitles
+            self.updateSubtitle(at: elapsed)
         })
     }
+    
+    func updateSubtitle(at time: CMTime) {
+//        subTitleLabel.isHidden = false
+            // Implement logic to update subtitle based on the current playback time
+//            let subtitleText = getSubtitleText(at: time.seconds)
+            // Update UI to display subtitleText
+        
+        // Implement logic to retrieve subtitle text based on the time
+        // You may want to load and parse a subtitle file (e.g., SRT format) here
+        // Return the appropriate subtitle text for the given time
+        let subtitleFile = Bundle.main.path(forResource: "trailer_720p", ofType: "srt")
+        let subtitleURL = URL(fileURLWithPath: subtitleFile!)
+        
+        // Subtitle parser
+        let parser = try? Subtitles(file: subtitleURL, encoding: .utf8)
+        
+        // Do something with result
+        let val = parser?.searchSubtitles(at: time.seconds) // Search subtitle at 2.0 seconds
+        subTitleLabel.text = val
+        subTitleLabel.isHidden = false
+        print("text is \(val)")
+        }
     
     func hideControlsOnTheScreen () {
         self.img10SecBack.isHidden = true
@@ -308,9 +336,9 @@ class PlayVideoViewController: UIViewController {
             return
         }
         self.lbTotalTime.text = "\(hoursStr):\(minsStr):\(secsStr)"
+        
     }
-    
-    
+
     @objc private func onTap10SecNext() {
         guard let currentTime = self.player?.currentTime() else { return }
         let seekTime10Sec = CMTimeGetSeconds(currentTime).advanced(by: 10)

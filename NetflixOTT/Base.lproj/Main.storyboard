@@ -148,8 +148,8 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mGN-se-V40">
-                                                <rect key="frame" x="61" y="207" width="228" height="31"/>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mGN-se-V40">
+                                                <rect key="frame" x="61" y="206.66666666666666" width="219" height="31"/>
                                             </slider>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wZH-nh-zdK">
                                                 <rect key="frame" x="101.66666666666669" y="100" width="190" height="50"/>
@@ -226,17 +226,29 @@
                                                     <action selector="settingsButtonAction:" destination="0bf-BB-OwE" eventType="touchUpInside" id="76x-EH-fD3"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ztw-gw-9mQ">
+                                                <rect key="frame" x="20" y="168.66666666666666" width="353" height="33"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="Itf-X3-Qhq"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="mGN-se-V40" firstAttribute="top" secondItem="Ztw-gw-9mQ" secondAttribute="bottom" constant="5" id="3m4-oY-96b"/>
                                             <constraint firstItem="cXI-Jo-sB2" firstAttribute="centerY" secondItem="aR0-ZE-BXk" secondAttribute="centerY" id="4eb-W5-2Cs"/>
                                             <constraint firstAttribute="trailing" secondItem="cXI-Jo-sB2" secondAttribute="trailing" constant="15" id="7GQ-tS-FIG"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ztw-gw-9mQ" secondAttribute="trailing" constant="20" id="Ch4-lm-hXH"/>
                                             <constraint firstItem="wZH-nh-zdK" firstAttribute="centerY" secondItem="9Sq-Kb-UY4" secondAttribute="centerY" id="FJA-bl-yK1"/>
                                             <constraint firstItem="7lL-08-RUQ" firstAttribute="centerY" secondItem="MK6-nF-mB0" secondAttribute="centerY" id="PHV-jN-jbP"/>
                                             <constraint firstItem="aR0-ZE-BXk" firstAttribute="centerY" secondItem="mGN-se-V40" secondAttribute="centerY" id="RJS-Ir-2Ox"/>
                                             <constraint firstItem="ZYX-eR-op1" firstAttribute="centerY" secondItem="Xw9-jI-mU0" secondAttribute="centerY" id="S9F-2d-to6"/>
                                             <constraint firstAttribute="bottom" secondItem="fLk-eb-5AQ" secondAttribute="bottom" constant="20" id="evV-mN-jQS"/>
                                             <constraint firstItem="cXI-Jo-sB2" firstAttribute="leading" secondItem="aR0-ZE-BXk" secondAttribute="trailing" constant="10" id="mYV-ke-Ysp"/>
+                                            <constraint firstItem="Ztw-gw-9mQ" firstAttribute="leading" secondItem="9Sq-Kb-UY4" secondAttribute="leading" constant="20" id="nwl-uQ-pGi"/>
                                             <constraint firstItem="mGN-se-V40" firstAttribute="centerY" secondItem="fLk-eb-5AQ" secondAttribute="centerY" id="uMZ-XC-VQJ"/>
                                             <constraint firstAttribute="trailing" secondItem="gmp-HA-MyK" secondAttribute="trailing" constant="15" id="xE4-y8-jaI"/>
                                             <constraint firstAttribute="trailing" secondItem="7lL-08-RUQ" secondAttribute="trailing" constant="-6" id="xTg-e1-JYS"/>
@@ -279,6 +291,7 @@
                         <outlet property="seekSlider" destination="mGN-se-V40" id="kHB-sC-p5p"/>
                         <outlet property="settingsButton" destination="gmp-HA-MyK" id="xUj-9S-pac"/>
                         <outlet property="stackCtrView" destination="wZH-nh-zdK" id="6ff-BM-KnE"/>
+                        <outlet property="subTitleLabel" destination="Ztw-gw-9mQ" id="rgA-cy-Sdf"/>
                         <outlet property="videoPlayer" destination="llg-gq-nNd" id="aId-xk-2pA"/>
                         <outlet property="videoPlayerHeight" destination="KCg-ls-6vX" id="uG7-qE-rc8"/>
                         <outlet property="viewControll" destination="9Sq-Kb-UY4" id="iLM-UP-WGO"/>
@@ -427,7 +440,7 @@
         <image name="arrow.down.circle.fill" catalog="system" width="128" height="123"/>
         <image name="arrow.up.left.and.arrow.down.right" catalog="system" width="128" height="115"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
-        <image name="goforward.10" catalog="system" width="119" height="128"/>
+        <image name="goforward.10" catalog="system" width="32" height="32"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="icClose" width="29" height="29"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
@@ -437,13 +450,13 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

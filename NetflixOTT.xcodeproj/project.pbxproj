@@ -25,6 +25,8 @@
 		487B331C2B8C6D520027226D /* QualityChangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487B331A2B8C6D520027226D /* QualityChangeCell.swift */; };
 		487B331D2B8C6D520027226D /* QualityChangeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487B331B2B8C6D520027226D /* QualityChangeCell.xib */; };
 		48AE9F282BA047FB00F4E38E /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE9F272BA047FB00F4E38E /* Generics.swift */; };
+		48AE9F2A2BA1856E00F4E38E /* trailer_720p.srt in Resources */ = {isa = PBXBuildFile; fileRef = 48AE9F292BA1856E00F4E38E /* trailer_720p.srt */; };
+		48AE9F2C2BA186F300F4E38E /* Subtitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE9F2B2BA186F300F4E38E /* Subtitles.swift */; };
 		48C38C0B2B9EF2E700AFA8DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48C38C0A2B9EF2E700AFA8DA /* GoogleService-Info.plist */; };
 		48C7FE812B8703D800D571A5 /* BaseTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7FE802B8703D800D571A5 /* BaseTabbarViewController.swift */; };
 		48C7FE832B8862EC00D571A5 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7FE822B8862EC00D571A5 /* PopupViewController.swift */; };
@@ -85,6 +87,8 @@
 		487B331A2B8C6D520027226D /* QualityChangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualityChangeCell.swift; sourceTree = "<group>"; };
 		487B331B2B8C6D520027226D /* QualityChangeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QualityChangeCell.xib; sourceTree = "<group>"; };
 		48AE9F272BA047FB00F4E38E /* Generics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generics.swift; sourceTree = "<group>"; };
+		48AE9F292BA1856E00F4E38E /* trailer_720p.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trailer_720p.srt; sourceTree = "<group>"; };
+		48AE9F2B2BA186F300F4E38E /* Subtitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subtitles.swift; sourceTree = "<group>"; };
 		48C38C0A2B9EF2E700AFA8DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		48C7FE802B8703D800D571A5 /* BaseTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabbarViewController.swift; sourceTree = "<group>"; };
 		48C7FE822B8862EC00D571A5 /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 				48D53E422B737ABF00FAE075 /* APICalls.swift */,
 				4829E0392B7DD1F40052AF3C /* GlobalConstants.swift */,
 				48AE9F272BA047FB00F4E38E /* Generics.swift */,
+				48AE9F2B2BA186F300F4E38E /* Subtitles.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 		48D94AA12B720E7B00315F46 /* NetflixOTT */ = {
 			isa = PBXGroup;
 			children = (
+				48AE9F292BA1856E00F4E38E /* trailer_720p.srt */,
 				487135EE2B732E9B0045599C /* Models */,
 				487135ED2B7225990045599C /* Managers */,
 				487135EC2B7225800045599C /* Resources */,
@@ -421,6 +427,7 @@
 			files = (
 				487135E92B7222700045599C /* HomeTabCell.xib in Resources */,
 				4829E0382B7B4DD70052AF3C /* UpcomingTitleTableViewCell.xib in Resources */,
+				48AE9F2A2BA1856E00F4E38E /* trailer_720p.srt in Resources */,
 				48D94AB22B720E7E00315F46 /* LaunchScreen.storyboard in Resources */,
 				487B331D2B8C6D520027226D /* QualityChangeCell.xib in Resources */,
 				48D94AAF2B720E7E00315F46 /* Assets.xcassets in Resources */,
@@ -558,6 +565,7 @@
 				4829E03C2B7DDB640052AF3C /* HomeTabPageViewController.swift in Sources */,
 				4829E0342B7A07600052AF3C /* TitlePreviewViewController.swift in Sources */,
 				48C7FE832B8862EC00D571A5 /* PopupViewController.swift in Sources */,
+				48AE9F2C2BA186F300F4E38E /* Subtitles.swift in Sources */,
 				48D53E432B737ABF00FAE075 /* APICalls.swift in Sources */,
 				48C7FE852B88678B00D571A5 /* QualityControlViewController.swift in Sources */,
 				487B331C2B8C6D520027226D /* QualityChangeCell.swift in Sources */,
