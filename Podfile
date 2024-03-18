@@ -17,6 +17,7 @@ target 'NetflixOTT' do
   # For example, to use Firebase Authentication and Cloud Firestore
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
+  pod 'Google-Mobile-Ads-SDK'
   target 'NetflixOTTTests' do
     inherit! :search_paths
     # Pods for testing

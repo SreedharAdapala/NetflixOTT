@@ -328,6 +328,7 @@
 				48D94A9C2B720E7B00315F46 /* Frameworks */,
 				48D94A9D2B720E7B00315F46 /* Resources */,
 				9499D42D65D7E25438813D7E /* [CP] Embed Pods Frameworks */,
+				D3B315D8090C303E6A6D3801 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -366,6 +367,7 @@
 				48D94ABF2B720E7E00315F46 /* Frameworks */,
 				48D94AC02B720E7E00315F46 /* Resources */,
 				3A3225ED6719B55B460DB633 /* [CP] Embed Pods Frameworks */,
+				BEA1E7AE5A1C938982C8C781 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -551,6 +553,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NetflixOTT/Pods-NetflixOTT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEA1E7AE5A1C938982C8C781 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetflixOTT-NetflixOTTUITests/Pods-NetflixOTT-NetflixOTTUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetflixOTT-NetflixOTTUITests/Pods-NetflixOTT-NetflixOTTUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NetflixOTT-NetflixOTTUITests/Pods-NetflixOTT-NetflixOTTUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3B315D8090C303E6A6D3801 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetflixOTT/Pods-NetflixOTT-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetflixOTT/Pods-NetflixOTT-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NetflixOTT/Pods-NetflixOTT-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
