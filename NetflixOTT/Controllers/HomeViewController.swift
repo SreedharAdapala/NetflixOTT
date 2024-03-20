@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAnalytics
+import GoogleMobileAds
 
 enum Sections: Int {
     case TrendingMovies = 0
@@ -26,6 +27,9 @@ class HomeViewController: UIViewController {
 
     let sectionTitles: [String] = ["Trending Movies", "Trending Tv", "Popular", "Upcoming Movies", "Top rated"]
 
+    //for ad banner view
+    var bannerView: GADBannerView!
+    
     //MARK: - methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +38,9 @@ class HomeViewController: UIViewController {
         self.setTableView()
         
         Generics.shared.logEvent(id: "HomeVC", itemName: "viewdidload function call")
+        designBannerView()
     }
-
+   
     func setTableView () {
         tableViewObj.backgroundColor = .black
         let nib = UINib(nibName: "HomeTabCell", bundle: nil)
@@ -186,6 +191,47 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
         
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
     }
+    
+    func designBannerView () {
+        let viewWidth = view.frame.inset(by: view.safeAreaInsets).width
+
+            // Here the current interface orientation is used. Use
+            // GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth or
+            // GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth if you prefer to load an ad of a
+            // particular orientation,
+            let adaptiveSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
+            bannerView = GADBannerView(adSize: adaptiveSize)
+
+            addBannerViewToView(bannerView)
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2435281174"
+          bannerView.rootViewController = self
+
+          bannerView.load(GADRequest())
+        bannerView.delegate = self
+//        self.view.bringSubviewToFront(bannerView)
+    }
+
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+          [NSLayoutConstraint(item: bannerView,
+                              attribute: .bottom,
+                              relatedBy: .equal,
+                              toItem: view.safeAreaLayoutGuide,
+                              attribute: .bottom,
+                              multiplier: 1,
+                              constant: 0),
+           NSLayoutConstraint(item: bannerView,
+                              attribute: .centerX,
+                              relatedBy: .equal,
+                              toItem: view,
+                              attribute: .centerX,
+                              multiplier: 1,
+                              constant: 0)
+          ])
+       }
+    
 }
 
 extension HomeViewController: HometabTableViewCellDelegate {
@@ -202,10 +248,46 @@ extension HomeViewController: HometabTableViewCellDelegate {
             }
         }
     }
+       
 }
 
 extension HomeViewController {
     public func publicMethodToTestConfigureHeaderView() {
         self.configureHeaderView()
+    }
+}
+
+extension HomeViewController:GADBannerViewDelegate {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("bannerViewDidReceiveAd")
+        bannerView.alpha = 0 //Adding animation for bannerview
+          UIView.animate(withDuration: 1, animations: {
+            bannerView.alpha = 1
+          })
+    }
+
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+      print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+      print("bannerViewDidRecordImpression")
+    }
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillPresentScreen")
+    }
+
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillDIsmissScreen")
+    }
+
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewDidDismissScreen")
+    }
+    
+    //this will be called when we click on ad
+    func bannerViewDidRecordClick(_ bannerView: GADBannerView) {
+        bannerView.removeFromSuperview()
     }
 }
