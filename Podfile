@@ -18,6 +18,7 @@ target 'NetflixOTT' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'Google-Mobile-Ads-SDK'
+  pod 'FBAudienceNetwork'
   target 'NetflixOTTTests' do
     inherit! :search_paths
     # Pods for testing
